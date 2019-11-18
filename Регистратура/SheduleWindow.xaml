@@ -1,0 +1,72 @@
+﻿<Window x:Class="Регистратура.SheduleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Регистратура"
+        mc:Ignorable="d"
+        Title="SheduleWindow" Height="543" Width="924">
+    <Window.Resources>
+        <!--<Style TargetType="Button" x: x:Key="Leftbutton">
+            
+        </Style>-->
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="2" Grid.RowSpan="2" >
+            <Grid.Background>
+                <ImageBrush ImageSource="picture/hf_hello2you_greengraph.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Grid.ColumnSpan="2" Grid.Row="1" Margin="2,0,-2,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="picture/hf_hello2you_green.jpg"/>
+            </Grid.Background>
+            
+        </Grid>
+        <Grid Grid.RowSpan="2">
+            <Grid.Background>
+                <ImageBrush ImageSource="picture/hf_hello2you_greengraph.jpg"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Grid.Row="0">
+            <Grid.Background>
+                <ImageBrush ImageSource="picture/hf_hello2you_green.jpg"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Grid.Column="1" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="63*"/>
+                <RowDefinition Height="37*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="256" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Registry" FontSize="40" Foreground="#FF275B22" Cursor="None" FontFamily="Script MT Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            
+            <TextBlock Text="Step 3" Grid.Column="1" Grid.Row="1" FontSize="20" Foreground="#FF275B22" Cursor="None" FontFamily="Script MT Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            
+            <Image Source="picture/Shedule.png" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" >
+
+            </Image>
+        </Grid>
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
+
+
+
+        </StackPanel>
+
+    </Grid>
+</Window>
