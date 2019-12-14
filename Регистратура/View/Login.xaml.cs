@@ -10,31 +10,45 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Регистратура.ViewModel;
 
 namespace Регистратура.View
 {
     /// <summary>
-    /// Логика взаимодействия для Spesilization.xaml
+    /// Логика взаимодействия для Login.xaml
     /// </summary>
-    public partial class Spesilization : Page
+    public partial class Login : Window
     {
-        Frame frame;    //ссылка на фрейм
-        Spesializations sp;
+        Frame frame;
+        int record;
+        Logins log;
 
-        public Spesilization(Frame fr)
+
+        public Login( int rec_id)
         {
             InitializeComponent();
-            frame = fr;
-            sp = new Spesializations();
-            DataContext = sp;
+            
+            record = rec_id;
+            //DataContext = new Doctors(sp_ID);
+            log = new Logins( record);
+            
+            DataContext = log;
+        }
+
+        public Login()
+        {
+            InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            frame.Content = new View.Doctor(frame,sp.SelectSpesialities.Spesiality_ID);
+            this.DialogResult = true;
+        }
+
+        public string Identification
+        {
+            get;
         }
     }
 }

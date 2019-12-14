@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Регистратура
+namespace Регистратура.View
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -23,7 +23,7 @@ namespace Регистратура
         public MainWindow()
         {
             InitializeComponent();
-            Pages.Content = new View.Spesilization();
+            Pages.Content = new View.Spesilization(Pages);
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)

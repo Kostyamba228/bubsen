@@ -17,24 +17,31 @@ using Регистратура.ViewModel;
 namespace Регистратура.View
 {
     /// <summary>
-    /// Логика взаимодействия для Spesilization.xaml
+    /// Логика взаимодействия для TimeTable.xaml
     /// </summary>
-    public partial class Spesilization : Page
+    public partial class TimeTable : Page
     {
-        Frame frame;    //ссылка на фрейм
-        Spesializations sp;
-
-        public Spesilization(Frame fr)
+        Frame frame;
+        TimeTables sp;
+        int doc_ID;
+        public TimeTable(Frame fr, int doc_ID)
         {
             InitializeComponent();
             frame = fr;
-            sp = new Spesializations();
+            this.doc_ID = doc_ID;
+            sp = new TimeTables(doc_ID);
             DataContext = sp;
+            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)   //записаться
         {
-            frame.Content = new View.Doctor(frame,sp.SelectSpesialities.Spesiality_ID);
+            frame.Content = new View.Records(frame,doc_ID);
+        }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)  //домо1
+        {
+            frame.Content = new View.Spesilization(frame);
         }
     }
 }

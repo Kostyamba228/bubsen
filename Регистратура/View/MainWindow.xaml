@@ -1,4 +1,4 @@
-﻿<Window x:Class="Регистратура.MainWindow"
+﻿<Window x:Class="Регистратура.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -34,16 +34,10 @@
             <ColumnDefinition Width="140" />
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-        <!--<ListView>
-            <ListViewItem Height="60">
-                <StackPanel Orientation="Horizontal"></StackPanel>
-            </ListViewItem>
-        </ListView>-->
         <Frame x:Name="Pages" Grid.Column="1" Grid.ColumnSpan="2" NavigationUIVisibility="Visible"></Frame>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.Background>
-                <ImageBrush ImageSource="picture/hf_hello2you_green.jpg" Opacity="0.9"/>
+                <ImageBrush Opacity="0.9" ImageSource="/Регистратура;component/picture/kkk.png"/>
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="7*"/>
@@ -52,37 +46,32 @@
             <Grid Grid.Row="0" Background="White" >
                 <Button x:Name="ButtonCloseMenu" VerticalAlignment="Top" HorizontalAlignment="Right" Width="44" Height="42" Visibility="Collapsed" Click="ButtonCloseMenu_Click" Margin="0,6,8,0">
                     <Button.Background>
-                        <ImageBrush ImageSource="picture/right.png" Stretch="UniformToFill"/>
+                        <ImageBrush Stretch="UniformToFill" ImageSource="/Регистратура;component/picture/right.png"/>
                     </Button.Background>
                 </Button>
                 <Button x:Name="ButtonOpenMenu" VerticalAlignment="Top" HorizontalAlignment="Right" Width="44" Height="42" Click="ButtonOpenMenu_Click" Margin="0,6,8,0">
                     <Button.Background>
-                        <ImageBrush ImageSource="picture/right.png" Stretch="None"/>
+                        <ImageBrush  Stretch="None" ImageSource="/Регистратура;component/picture/right.png"/>
                     </Button.Background>
                 </Button>
             </Grid>
             <ListView Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,263" Background="{x:Null}">
                 <ListViewItem Height="60">
-                    <!--<ListViewItem.Background>
-                        -->
-                    <!--<ImageBrush ImageSource="picture/hf_hello2you_greengraph.jpg"/>-->
-                    <!--
-                    </ListViewItem.Background>-->
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="picture/Hospital.png" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48"/>
+                        <Image Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48" Source="/Регистратура;component/picture/Hospital.png"/>
                         <TextBlock Text="Главная страница" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell" FontSize="16"/>
                     </StackPanel>
 
                 </ListViewItem>
                 <ListViewItem Height="60" Background="{x:Null}" Selected="ListViewItem_Selected">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="picture/reference.png" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48"/>
+                        <Image Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48" Source="/Регистратура;component/picture/reference.png"/>
                         <TextBlock Text="Справка" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell" FontSize="16"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60" Background="{x:Null}">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="picture/date.png" Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48"/>
+                        <Image Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48" Source="/Регистратура;component/picture/Date.png"/>
                         <TextBlock Text="Контактная информация" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell"/>
                     </StackPanel>
                 </ListViewItem>

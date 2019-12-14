@@ -12,17 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Регистратура.ViewModel;
 
 namespace Регистратура.View
 {
-    /// <summary>
-    /// Логика взаимодействия для Doctor.xaml
-    /// </summary>
     public partial class Doctor : Page
     {
-        public Doctor()
+        public Frame frame;    //ссылка на фрейм
+        Doctors sp;
+
+        public Doctor(Frame fr,int sp_ID)
         {
             InitializeComponent();
+            frame = fr;
+            //DataContext = new Doctors(sp_ID);
+            sp = new Doctors(sp_ID);
+            DataContext = sp;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new View.TimeTable(frame,sp.SelectDoctor.Doctor_ID);
         }
     }
 }

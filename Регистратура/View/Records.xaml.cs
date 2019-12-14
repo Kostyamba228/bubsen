@@ -17,24 +17,25 @@ using Регистратура.ViewModel;
 namespace Регистратура.View
 {
     /// <summary>
-    /// Логика взаимодействия для Spesilization.xaml
+    /// Логика взаимодействия для Records.xaml
     /// </summary>
-    public partial class Spesilization : Page
+    public partial class Records : Page
     {
-        Frame frame;    //ссылка на фрейм
-        Spesializations sp;
-
-        public Spesilization(Frame fr)
+        public Frame frame;    //ссылка на фрейм
+        ViewModel.Records rec;
+        public Records(Frame fr,int doc_ID)
         {
             InitializeComponent();
             frame = fr;
-            sp = new Spesializations();
-            DataContext = sp;
+            
+            rec = new Регистратура.ViewModel.Records(doc_ID);
+            DataContext = rec;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            frame.Content = new View.Doctor(frame,sp.SelectSpesialities.Spesiality_ID);
+            Login lg = new Login(rec.SelectedRecord.Record_ID);
+            //frame.Content = Login(frame, rec.SelectedRecord);
         }
     }
 }

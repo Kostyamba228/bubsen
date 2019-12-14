@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Spesilization">
 
-    <Grid x:Name="Registry" Background="White">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="63"/>
             <RowDefinition Height="37"/>
@@ -16,19 +16,37 @@
         </Grid.RowDefinitions>
         <Grid Grid.RowSpan="2">
             <Grid.Background>
-                <ImageBrush ImageSource="/Регистратура;component/picture/phon.jpg" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/Регистратура;component/picture/kkk.png" Stretch="UniformToFill"/>
             </Grid.Background>
 
         </Grid>
-        <TextBlock Grid.Row="0" Text="Registry" FontSize="40" Foreground="#FF275B22" Cursor="None" FontFamily="Script MT Bold" HorizontalAlignment="Center" />
-        <TextBlock Text="Step 1" FontSize="20" Foreground="#FF275B22" Cursor="None" FontFamily="Script MT Bold" HorizontalAlignment="Center" VerticalAlignment="Center"    Grid.Row="1"/>
-        <Image Grid.Row="1" HorizontalAlignment="Left" Margin="300,0,0,0" Source="/Регистратура;component/picture/Doctor.png"/>
+        <TextBlock Grid.Row="0" Text="Регистратура" FontSize="40" Foreground="#FF275B22" Cursor="None" FontFamily="Script MT Bold" HorizontalAlignment="Center" />
+        <TextBlock Text="Шаг 1" FontSize="20" Foreground="#FF275B22" Cursor="None" FontFamily="Script MT Bold" HorizontalAlignment="Center" VerticalAlignment="Center"    Grid.Row="1"/>
+
         <Grid Grid.Row="2">
             <Grid.Background>
-                <ImageBrush ImageSource="/Регистратура;component/picture/hf_hello2you_green.jpg"/>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFA5E675" Offset="1"/>
+                </LinearGradientBrush>
             </Grid.Background>
-            <ListView x:Name="listView" HorizontalAlignment="Left" Height="224" Margin="11,14,0,0" VerticalAlignment="Top" Width="772" Opacity="0.3"/>
-            <Button x:Name="Выбрать" Content="Выбрать" HorizontalAlignment="Center" Height="53"  VerticalAlignment="Bottom" Width="217" Click="Button_Click"/>
+            <ListView ItemsSource="{Binding Path=Allspesialities}" SelectedItem="{Binding Path=SelectSpesialities}" HorizontalAlignment="Left" Height="270" Margin="113,14,0,0" VerticalAlignment="Top" Width="575" Opacity="0.8" Background="{x:Null}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black" Width="500">
+                            <TextBlock Text="{Binding Path=Name}" FontWeight="Bold" FontSize="18" Background="{x:Null}"/>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListView>
+            <Button  Command="{Binding Path=SelectCommand}" HorizontalAlignment="Center" Height="53"  VerticalAlignment="Bottom" Width="217" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>
+                        <TextBlock Text="Next" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontStyle="Italic" FontSize="21" FontFamily="Ink Free"  />
+                    </StackPanel>
+                </Border>
+            </Button>
         </Grid>
 
     </Grid>
