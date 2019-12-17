@@ -26,6 +26,7 @@ namespace Регистратура.View
         public Records(Frame fr,int doc_ID)
         {
             InitializeComponent();
+
             frame = fr;
             
             rec = new Регистратура.ViewModel.Records(doc_ID);

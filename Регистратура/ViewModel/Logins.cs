@@ -34,21 +34,38 @@ namespace Регистратура.ViewModel
             set { password = value; }
         }
 
-        public bool serch
+        public RelayCommand SelectCommand
         {
-            get { return search; }
-            set
+            get
             {
-                pat = db.Patient.Where(i => i.Login == logins && i.Password == password).FirstOrDefault();
-                if (pat != null)
+                return new RelayCommand(obj =>
                 {
-                    search = true;
-                    record = db.Record.Where(i => i.Record_ID == rec).FirstOrDefault();
-                    record.Patient_FK = pat.Patient_ID;
-                    record.Status = true;
-                }
+                    pat = db.Patient.Where(i => i.Login == logins && i.Password == password).FirstOrDefault();
+                    if (pat != null)
+                    {
+                        record = db.Record.Where(i => i.Record_ID == rec).FirstOrDefault();
+                        record.Patient_FK = pat.Patient_ID;
+                        record.Status = true;
+                    }
+                });
             }
         }
+
+        //public bool serch
+        //{
+        //    get { return search; }
+        //    set
+        //    {
+        //        pat = db.Patient.Where(i => i.Login == logins && i.Password == password).FirstOrDefault();
+        //        if (pat != null)
+        //        {
+        //            search = true;
+        //            record = db.Record.Where(i => i.Record_ID == rec).FirstOrDefault();
+        //            record.Patient_FK = pat.Patient_ID;
+        //            record.Status = true;
+        //        }
+        //    }
+        //}
 
        
 
