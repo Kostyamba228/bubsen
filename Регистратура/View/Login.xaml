@@ -21,13 +21,13 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
             <TextBlock x:Name="label" Text="Введите логин" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
-            <TextBox x:Name="textBox"  HorizontalAlignment="Center" Height="17"  Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
+            <TextBox x:Name="textBox"  HorizontalAlignment="Center" Height="17"  Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Loginss, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock  Text="Введите пароль" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
-            <PasswordBox  x:Name="passwordBox" Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Bottom" Width="92"/>
+            <TextBox x:Name="textBox_Copy"  HorizontalAlignment="Center" Height="17" TextWrapping="Wrap" Text="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
         </StackPanel>
-        <Button Command="{Binding Path=SignCommand}"  Content="Button" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Click="Button_Click" />
+        <Button Command="{Binding Path=SelectCommand}"  Content="Button" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Click="Button_Click" />
 
 
 

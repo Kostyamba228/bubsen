@@ -1,0 +1,90 @@
+﻿<Page x:Class="Регистратура.View.lk"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Регистратура.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="lk">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="63"/>
+            <RowDefinition Height="37"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.RowSpan="2">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Регистратура;component/picture/kkk.png" Stretch="UniformToFill"/>
+            </Grid.Background>
+
+        </Grid>
+        <TextBlock Grid.Row="0" Text="Регистратура" FontSize="40" Foreground="#FF275B22" Cursor="None" FontFamily="Script MT Bold" HorizontalAlignment="Center" />
+        <TextBlock Text="Личный кабинет" FontSize="20" Foreground="#FF275B22" Cursor="None" FontFamily="Script MT Bold" HorizontalAlignment="Center" VerticalAlignment="Center"    Grid.Row="1"/>
+
+        <Grid Grid.Row="2">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFA5E675" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
+
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Информация" HorizontalAlignment="Center" FontWeight="Bold"/>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="ФИО:"/>
+                        <TextBlock Text="{Binding Path=Fio}"/>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Адрес:"/>
+                        <TextBlock Text="{Binding Path=Adr}"/>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Страховой полис:"/>
+                        <TextBlock Text="{Binding Path=Polis}"/>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Text="Дата ождения:"/>
+                        <TextBlock Text="{Binding Path=Date}"/>
+                    </WrapPanel>
+                    <StackPanel Orientation="Horizontal">
+
+                    </StackPanel>
+                </StackPanel>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="7*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Column="1" Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                        <DatePicker Grid.Column="1" />
+                        <DatePicker Grid.Column="2"/>
+                    </Grid>
+                    <TextBlock Grid.Row="0" Text="Отчет" HorizontalAlignment="Center" FontSize="20"/>
+                    <Button Grid.Row="2" Content="Найти"/>
+                    <DataGrid Grid.Column="1" Grid.Row="3"/>
+                </Grid>
+
+
+
+
+            </Grid>
+           
+        </Grid>
+
+    </Grid>
+</Page>

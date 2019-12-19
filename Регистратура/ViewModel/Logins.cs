@@ -19,6 +19,7 @@ namespace Регистратура.ViewModel
 
         public Logins(int rec_id)
         {
+            db = new ClinContext();
             rec = rec_id;
         }
 
@@ -46,6 +47,7 @@ namespace Регистратура.ViewModel
                         record = db.Record.Where(i => i.Record_ID == rec).FirstOrDefault();
                         record.Patient_FK = pat.Patient_ID;
                         record.Status = true;
+                        db.SaveChanges();
                     }
                 });
             }

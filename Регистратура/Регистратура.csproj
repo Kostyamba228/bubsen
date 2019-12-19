@@ -135,6 +135,7 @@
       <DependentUpon>SheduleWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Doctors.cs" />
+    <Compile Include="ViewModel\Lk.cs" />
     <Compile Include="ViewModel\Logins.cs" />
     <Compile Include="ViewModel\Records.cs" />
     <Compile Include="ViewModel\RecordsViewModel.cs" />
@@ -143,6 +144,9 @@
     <Compile Include="ViewModel\TimeTables.cs" />
     <Compile Include="View\Doctor.xaml.cs">
       <DependentUpon>Doctor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\lk.xaml.cs">
+      <DependentUpon>lk.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -161,6 +165,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\lk.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

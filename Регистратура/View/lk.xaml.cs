@@ -17,27 +17,15 @@ using Регистратура.ViewModel;
 namespace Регистратура.View
 {
     /// <summary>
-    /// Логика взаимодействия для Records.xaml
+    /// Логика взаимодействия для lk.xaml
     /// </summary>
-    public partial class Records : Page
+    public partial class lk : Page
     {
         public Frame frame;    //ссылка на фрейм
-        ViewModel.Records rec;
-        public Records(Frame fr,int doc_ID)
+        Lk sp;
+        public lk()
         {
             InitializeComponent();
-
-            frame = fr;
-            
-            rec = new Регистратура.ViewModel.Records(doc_ID);
-            DataContext = rec;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Login lg = new Login(rec.SelectedRecord.Record_ID);
-            lg.ShowDialog();
-            //frame.Content = Login(frame, rec.SelectedRecord);
         }
     }
 }
