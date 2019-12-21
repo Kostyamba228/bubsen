@@ -34,7 +34,7 @@
             <ColumnDefinition Width="140" />
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="Pages" Grid.Column="1" Grid.ColumnSpan="2" NavigationUIVisibility="Visible"></Frame>
+        <Frame x:Name="Pages" Grid.Column="1" Grid.ColumnSpan="2" NavigationUIVisibility="Visible" Navigated="Pages_Navigated"></Frame>
         <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.Background>
                 <ImageBrush Opacity="0.9" ImageSource="/Регистратура;component/picture/kkk.png"/>
@@ -65,8 +65,12 @@
                 </ListViewItem>
                 <ListViewItem Height="60" Background="{x:Null}" Selected="ListViewItem_Selected">
                     <StackPanel Orientation="Horizontal">
-                        <Image Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48" Source="/Регистратура;component/picture/reference.png"/>
-                        <TextBlock Text="Справка" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell" FontSize="16"/>
+                        <Button Background="{x:Null}" Click="ButtonClick">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48" Source="/Регистратура;component/picture/reference.png"/>
+                                <TextBlock Text="Справка" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell" FontSize="16"/>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60" Background="{x:Null}">

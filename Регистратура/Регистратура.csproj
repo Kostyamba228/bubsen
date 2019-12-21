@@ -118,15 +118,13 @@
     <Compile Include="DateWindow.xaml.cs">
       <DependentUpon>DateWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DayWindow.xaml.cs">
-      <DependentUpon>DayWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Model\ClinContext.cs" />
     <Compile Include="Model\Day_of_week.cs" />
     <Compile Include="Model\Doctor.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\Record.cs" />
     <Compile Include="Model\Registrar.cs" />
+    <Compile Include="Model\Report.cs" />
     <Compile Include="Model\Spesiality.cs" />
     <Compile Include="Model\Status.cs" />
     <Compile Include="Model\TimeTable.cs" />
@@ -148,6 +146,9 @@
     <Compile Include="View\lk.xaml.cs">
       <DependentUpon>lk.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Login1.xaml.cs">
+      <DependentUpon>Login1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -164,19 +165,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DayWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\lk.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="View\Регистратура.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -184,8 +185,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="View\Регистратура.xaml.cs">
+      <DependentUpon>Регистратура.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SheduleWindow.xaml">

@@ -1,11 +1,11 @@
-﻿<Window x:Class="Регистратура.View.Login"
+﻿<Window x:Class="Регистратура.View.Login1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Регистратура.View"
         mc:Ignorable="d"
-        Title="Запись" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+        Title="Вход" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -20,14 +20,14 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
-            <TextBlock  Text="Введите логин" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
-            <TextBox   HorizontalAlignment="Center" Height="17"  Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Loginss, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
+            <TextBlock x:Name="label" Text="Введите логин" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
+            <TextBox x:Name="textBox"  HorizontalAlignment="Center" Height="17"  Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Loginss, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock  Text="Введите пароль" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
-            <TextBox  HorizontalAlignment="Center" Height="17" TextWrapping="Wrap" Text="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
+            <TextBox x:Name="textBox_Copy"  HorizontalAlignment="Center" Height="17" TextWrapping="Wrap" Text="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
         </StackPanel>
-        <Button Command="{Binding Path=SelectCommand}"  Content="Button" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Click="Button_Click" />
+        <Button Command="{Binding Path=Login}"  Content="Button" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Click="Button_Click" />
 
 
 

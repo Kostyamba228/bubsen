@@ -1,5 +1,5 @@
-﻿<Page x:Class="Регистратура.View.lk"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window x:Class="Регистратура.View.lk"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -65,26 +65,34 @@
                         <RowDefinition Height="7*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Column="1" Grid.Row="1">
-                            <Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="2*"/>
-                            </Grid.ColumnDefinitions>
-                        <DatePicker Grid.Column="1" />
-                        <DatePicker Grid.Column="2"/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker SelectedDate="{Binding Path=date1, Mode=TwoWay}" Grid.Column="1" />
+                        <DatePicker Grid.Column="2" SelectedDate="{Binding Path=date2, Mode=TwoWay}" />
                     </Grid>
                     <TextBlock Grid.Row="0" Text="Отчет" HorizontalAlignment="Center" FontSize="20"/>
-                    <Button Grid.Row="2" Content="Найти"/>
-                    <DataGrid Grid.Column="1" Grid.Row="3"/>
+                    <Button Grid.Row="2" Command="{Binding Path=otch}" Content="Найти"/>
+                    <DataGrid Grid.Column="1" Grid.Row="3" DataContext="{Binding Path=Otchet}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Специальность" Binding="{Binding Path=sp}"/>
+                            <DataGridTextColumn Header="ФИО врача" Binding="{Binding Path=doctor}"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Path=date}"/>
+                            <DataGridTextColumn Header="Время" Binding="{Binding Path=time}"/>
+                            <DataGridTextColumn Header="Кабинет" Binding="{Binding Path=kabinet}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
 
 
 
 
             </Grid>
-           
+
         </Grid>
 
     </Grid>
-</Page>
+</Window>

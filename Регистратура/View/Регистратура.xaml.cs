@@ -20,6 +20,7 @@ namespace Регистратура.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        Frame frame;
         public MainWindow()
         {
             InitializeComponent();
@@ -42,6 +43,16 @@ namespace Регистратура.View
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Pages_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
+        private void ButtonClick (object sender, RoutedEventArgs e)
+        {
+            Login1 lg = new Login1(frame);
+            lg.ShowDialog();
         }
     }
 }

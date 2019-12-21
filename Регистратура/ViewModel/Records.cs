@@ -11,9 +11,9 @@ namespace Регистратура.ViewModel
     {
         ClinContext db;
         int Doctor_id;
-        private List<Record> allrecord;
-        public List<Record> Allrecord
-        { get { return allrecord; }
+        private List<RecordsViewModel> allrecord;
+        public List<RecordsViewModel> Allrecord
+        {   get { return allrecord; }
             set { allrecord = value; OnPropertyChanged("Allrecord"); }
         }       //список докторов
 
@@ -21,7 +21,7 @@ namespace Регистратура.ViewModel
         public Records(int Doctor_ID)
         {
             db = new ClinContext();
-            Allrecord = db.Record.Where(i => i.Doctor_FK == Doctor_ID && i.Date == date.Date).ToList();
+            Allrecord = db.Record.Where(i => i.Doctor_FK == Doctor_ID && i.Date == date.Date).ToList().Select(i => new RecordsViewModel(i)).ToList();
             Doctor_id = Doctor_ID;
         }
 
@@ -29,16 +29,29 @@ namespace Регистратура.ViewModel
         public DateTime Date
         { 
             get { return date; }
-            set { date = value; Allrecord = db.Record.Where(i => i.Doctor_FK == Doctor_id && i.Date == date.Date).ToList(); OnPropertyChanged("Date"); }
+            set { date = value; Allrecord = db.Record.Where(i => i.Doctor_FK == Doctor_id && i.Date == date.Date).ToList().Select(i => new RecordsViewModel(i)).ToList(); ; OnPropertyChanged("Date"); }
         }
 
-        private Record selectedrecord;
-        public Record SelectedRecord
+        private RecordsViewModel selectedrecord;
+        public RecordsViewModel SelectedRecord
         {
             get { return selectedrecord; }
-            set { selectedrecord = value;
-                OnPropertyChanged("SelectedRecord");
-                    }
+            set
+            {
+                    selectedrecord = value;
+                   
+            }
+        }
+
+        private RelayCommand selectCommand;
+        public RelayCommand SelectCommand
+        {
+            get
+            {
+                return selectCommand ??
+                  (selectCommand = new RelayCommand(obj => { },
+                 (obj) => (selectedrecord != null && selectedrecord.Status == false)));    //условие, при котором будет доступна команда
+            }
         }
     }
 }
