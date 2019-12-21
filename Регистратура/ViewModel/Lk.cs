@@ -15,7 +15,7 @@ namespace Регистратура.ViewModel
         Report report;
 
         private List<Otchet> otchet;
-        public List<Otchet> Otchet
+        public List<Otchet> OOO
         {
             get { return otchet; }
             set { otchet = value; OnPropertyChanged("Otchet"); }
@@ -31,7 +31,7 @@ namespace Регистратура.ViewModel
             db = new ClinContext();
             report = new Report();
             pat = db.Patient.Where(i => i.Patient_ID == id).FirstOrDefault();
-            Otchet = report.Find(date1.Date, date2.Date, id).ToList();
+            OOO = report.Find(date1.Date, date2.Date, id).ToList();
         }
 
         public string Fio
@@ -62,7 +62,7 @@ namespace Регистратура.ViewModel
                 return new RelayCommand(obj =>
                 {
                     
-                    Otchet = report.Find(date1.Date, date2.Date, id).ToList();
+                    OOO = report.Find(date1.Date, date2.Date, id).ToList();
   
                 });
             }

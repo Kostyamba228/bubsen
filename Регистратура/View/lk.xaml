@@ -76,7 +76,7 @@
                     </Grid>
                     <TextBlock Grid.Row="0" Text="Отчет" HorizontalAlignment="Center" FontSize="20"/>
                     <Button Grid.Row="2" Command="{Binding Path=otch}" Content="Найти"/>
-                    <DataGrid Grid.Column="1" Grid.Row="3" DataContext="{Binding Path=Otchet}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+                    <DataGrid Grid.Column="1" Grid.Row="3" DataContext="{Binding Path=OOO}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Специальность" Binding="{Binding Path=sp}"/>
                             <DataGridTextColumn Header="ФИО врача" Binding="{Binding Path=doctor}"/>

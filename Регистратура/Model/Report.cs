@@ -28,8 +28,15 @@ namespace Регистратура.Model
             SqlParameter value2 = new SqlParameter("@date2", date2);
             SqlParameter value3 = new SqlParameter("@ID", pat_ID);
             var result = db.Database.SqlQuery<Otchet>("Report @date1,@date2,@ID", new object[] { value1, value2, value3 }).ToList();
-            //var data = result.Select(i => new { i.Oblast, i.God, i.Projitoznmin }).ToList();
-            return result;
+            var data = result.Select(i => new Otchet
+            {
+                sp = i.sp,
+                doctor = i.doctor,
+                date = i.date,
+                time=i.time,
+                kabinet=i.kabinet,
+            }).ToList();
+            return data;
         }
     }
 }

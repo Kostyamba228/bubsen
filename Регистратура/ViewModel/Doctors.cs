@@ -28,6 +28,7 @@ namespace Регистратура.ViewModel
             set
             {
                 selectDoctor = value;
+                Color = "#FF479C00";
                 OnPropertyChanged("SelectDoctor");
             }
         }
@@ -41,6 +42,16 @@ namespace Регистратура.ViewModel
                   (selectCommand = new RelayCommand(obj => { },
                  (obj) => (selectDoctor != null)));    //условие, при котором будет доступна команда
             }
+        }
+
+        private string color = "Red";
+        public string Color
+        {
+            get
+            {
+                return color;
+            }
+            set { color = value; OnPropertyChanged("Color"); }
         }
     }
 }
