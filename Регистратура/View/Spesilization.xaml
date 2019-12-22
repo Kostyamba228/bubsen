@@ -28,7 +28,7 @@
                                 <MultiTrigger.Conditions>
                                     <Condition Property="IsSelected" Value="true"></Condition>
                                 </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="Green"></Setter>
+                                <Setter Property="Background" TargetName="Bd" Value="#7eb43b"></Setter>
                             </MultiTrigger>
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
@@ -42,6 +42,44 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Background" Value="Purple"></Setter>
+            <Setter Property="TextElement.FontFamily" Value="Candara Light"></Setter>
+            <Setter Property="TextElement.Foreground" Value="White"></Setter>
+            <Setter Property="TextElement.FontSize" Value="18"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="Width" Value="70"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+            <Setter Property="Margin" Value="2.5,5,5,5"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}"
+Background="{TemplateBinding Background}"
+Padding="{TemplateBinding Padding}"
+SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#7eb43b"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#AEF359"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Page.Resources>
 
     <Grid Background="White">
@@ -75,8 +113,8 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListView>
-            <Button  Command="{Binding Path=SelectCommand}" HorizontalAlignment="Center" Height="53"  VerticalAlignment="Bottom" Width="217"  Margin="0,10,0,10"  Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
-                <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black">
+            <Button Style="{StaticResource ButtonStyle}"  Command="{Binding Path=SelectCommand}" HorizontalAlignment="Center" Height="53"  VerticalAlignment="Bottom" Width="217"  Margin="0,10,0,10"  Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="{Binding Path=Color, UpdateSourceTrigger=PropertyChanged}">
                     <StackPanel Orientation="Horizontal">
                         <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>
                         <TextBlock Text="Next" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontStyle="Italic" FontSize="21" FontFamily="Ink Free"  />

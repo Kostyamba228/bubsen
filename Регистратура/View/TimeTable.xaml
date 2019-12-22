@@ -8,6 +8,48 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Doctor">
 
+    <Page.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Background" Value="Purple"></Setter>
+            <Setter Property="TextElement.FontFamily" Value="Candara Light"></Setter>
+            <Setter Property="TextElement.Foreground" Value="White"></Setter>
+            <Setter Property="TextElement.FontSize" Value="18"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="Width" Value="70"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+            <Setter Property="Margin" Value="2.5,5,5,5"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd"
+BorderBrush="{TemplateBinding BorderBrush}"
+BorderThickness="{TemplateBinding BorderThickness}"
+Background="{TemplateBinding Background}"
+Padding="{TemplateBinding Padding}"
+SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#6a006a"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#FFA956A9"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Page.Resources>
+
+
     <Grid x:Name="Registry" Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="63"/>
@@ -25,8 +67,7 @@
 
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="327*"/>
-                <ColumnDefinition Width="473*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -34,7 +75,7 @@
                     <GradientStop Color="#FFA5E675" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <ListBox ItemsSource="{Binding Path=AllTimeTable}" IsHitTestVisible="False" HorizontalAlignment="Left" Height="326" Margin="107,2,0,0" VerticalAlignment="Top" Width="587" Grid.ColumnSpan="2" Background="{x:Null}">
+            <ListBox ItemsSource="{Binding Path=AllTimeTable}" IsHitTestVisible="False"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,35" Width="560" Height="326" Background="{x:Null}" BorderBrush="{x:Null}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black">
@@ -48,16 +89,16 @@
 
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button HorizontalAlignment="Center" Height="70"  VerticalAlignment="Bottom" Width="190" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="144,0,139,-14" Grid.Column="1">
-                <Border Padding="20,0,0,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black">
+            <Button  Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Height="70"  VerticalAlignment="Bottom" Width="190" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="471,0,139,0">
+                <Border Padding="20,0,0,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="#FF479C00">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="168">
                         <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>
                         <TextBlock Text="Записаться" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold" FontStyle="Italic" FontSize="18" FontFamily="Ink Free" Width="113"  />
                     </StackPanel>
                 </Border>
             </Button>
-            <Button  HorizontalAlignment="Left" Height="70"  VerticalAlignment="Bottom" Width="190" Click="Button1_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="166,0,0,-12" Grid.ColumnSpan="2">
-                <Border Padding="20,0,0,0" CornerRadius="10" BorderThickness="2" BorderBrush="Black" Width="167">
+            <Button  Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Height="70"  VerticalAlignment="Bottom" Width="190" Click="Button1_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="166,0,0,0">
+                <Border Padding="20,0,0,0" CornerRadius="10" BorderThickness="2" BorderBrush="#FF479C00" Width="167">
                     <StackPanel Orientation="Horizontal">
                         <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>
                         <TextBlock Text="Домой" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontStyle="Italic" FontSize="21" FontFamily="Ink Free" Width="78"  />

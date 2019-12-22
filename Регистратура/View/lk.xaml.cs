@@ -32,6 +32,15 @@ namespace Регистратура.View
             DataContext = sp;
         }
 
+        private void Print(object sender, RoutedEventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if(printDialog.ShowDialog() == true)
+            {
+                printDialog.PrintVisual(datagrid, "Костямба");
+            }
+        }
+
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

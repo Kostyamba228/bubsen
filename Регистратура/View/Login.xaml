@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Регистратура.View"
         mc:Ignorable="d"
-        Title="Запись" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
-    <Grid>
+        
+        Title="Запись" Height="300" Width="500" WindowStartupLocation="CenterScreen">
+
+    <Grid Opacity="0.8">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="White" Offset="0"/>
@@ -14,18 +16,18 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
             <TextBlock  Text="Введите логин" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
-            <TextBox   HorizontalAlignment="Center" Height="17"  Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Loginss, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
+            <TextBox   HorizontalAlignment="Center" Height="30" Width="250" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Loginss, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Bottom" Margin="18,0"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <TextBlock  Text="Введите пароль" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
-            <TextBox  HorizontalAlignment="Center" Height="17" TextWrapping="Wrap" Text="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
+            <TextBlock  Text="Введите пароль" HorizontalAlignment="Center"  VerticalAlignment="Top"  FontSize="16"    />
+            <TextBox  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30" Height="30" Width="250" TextWrapping="Wrap" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    />
         </StackPanel>
         <Button Command="{Binding Path=SelectCommand}"  Content="Button" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Click="Button_Click" />
 

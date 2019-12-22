@@ -76,7 +76,7 @@
                     </Grid>
                     <TextBlock Grid.Row="0" Text="Отчет" HorizontalAlignment="Center" FontSize="20"/>
                     <Button Grid.Row="2" Command="{Binding Path=otch}" Content="Найти"/>
-                    <DataGrid Grid.Column="1" Grid.Row="3" DataContext="{Binding Path=OOO}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+                    <DataGrid x:Name="datagrid" Grid.Column="1" Grid.Row="3" ItemsSource="{Binding Path=OOO}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" CanUserReorderColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Специальность" Binding="{Binding Path=sp}"/>
                             <DataGridTextColumn Header="ФИО врача" Binding="{Binding Path=doctor}"/>
@@ -91,6 +91,7 @@
 
 
             </Grid>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="82,198,0,0" VerticalAlignment="Top" Width="75" Click="Print"/>
 
         </Grid>
 

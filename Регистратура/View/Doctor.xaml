@@ -9,6 +9,40 @@
       Title="Doctor">
 
     <Page.Resources>
+        <Style x:Key="CategoryItemStyle" TargetType="ListViewItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Border x:Name="Bd"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="true"></Condition>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="#7eb43b"></Setter>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="false"></Condition>
+                                    <Condition Property="IsMouseOver" Value="true"></Condition>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="#AEF359"></Setter>
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="BorderThickness" Value="0"></Setter>
             <Setter Property="Background" Value="Purple"></Setter>
@@ -46,39 +80,7 @@ VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
             </Setter>
         </Style>
 
-        <Style x:Key="CategoryItemStyle" TargetType="ListViewItem">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ListViewItem">
-                        <Border x:Name="Bd"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{TemplateBinding Background}"
-                                Padding="{TemplateBinding Padding}"
-                                SnapsToDevicePixels="true">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="true"></Condition>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="Green"></Setter>
-                            </MultiTrigger>
-                            <MultiTrigger>
-                                <MultiTrigger.Conditions>
-                                    <Condition Property="IsSelected" Value="false"></Condition>
-                                    <Condition Property="IsMouseOver" Value="true"></Condition>
-                                </MultiTrigger.Conditions>
-                                <Setter Property="Background" TargetName="Bd" Value="#AEF359"></Setter>
-                            </MultiTrigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        
     </Page.Resources>
 
     <Grid x:Name="Registry" Background="White">
@@ -100,13 +102,13 @@ VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0"/>
-                    <GradientStop Color="#FF479C00" Offset="1"/>
+                    <GradientStop Color="#FFA5E675" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <ListView ItemsSource="{Binding Path=Alldoctor}" SelectedItem="{Binding Path=SelectDoctor}" Height="270" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,35" Width="575" Background="{x:Null}" ItemContainerStyle="{StaticResource CategoryItemStyle}">
+            <ListView ItemsSource="{Binding Path=Alldoctor}"  SelectedItem="{Binding Path=SelectDoctor}" Opacity="0.8" Height="270" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,35" Width="530" Background="{x:Null}" ItemContainerStyle="{StaticResource CategoryItemStyle}" BorderBrush="{x:Null}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black">
+                        <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black" Width="500" >
                             <TextBlock Text="{Binding Path=FIO}" FontWeight="Bold" FontSize="18"/>
                         </Border>
                     </DataTemplate>

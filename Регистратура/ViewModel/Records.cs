@@ -39,7 +39,11 @@ namespace Регистратура.ViewModel
             set
             {
                     selectedrecord = value;
-                   
+                if (selectedrecord !=null && selectedrecord.Status == false)
+                    Color = "#FF479C00";
+                else Color = "Red";
+                OnPropertyChanged("SelecRecords");
+
             }
         }
 
@@ -52,6 +56,16 @@ namespace Регистратура.ViewModel
                   (selectCommand = new RelayCommand(obj => { },
                  (obj) => (selectedrecord != null && selectedrecord.Status == false)));    //условие, при котором будет доступна команда
             }
+        }
+
+        private string color= "Red";
+        public string Color
+        {
+            get
+            {
+                return color;
+            }
+            set { color = value; OnPropertyChanged("Color"); }
         }
     }
 }
