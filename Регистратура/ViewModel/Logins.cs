@@ -17,11 +17,13 @@ namespace Регистратура.ViewModel
         private string password;
         public int rec;
         Record record;
+        Records reco;
 
-        public Logins(int rec_id)
+        public Logins(int rec_id, Records r)
         {
             db = new ClinContext();
             rec = rec_id;
+            reco = r;
         }
 
         public string Loginss
@@ -50,6 +52,7 @@ namespace Регистратура.ViewModel
                         record.Status = true;
                         
                         db.SaveChanges();
+                        reco.Allrecord= db.Record.Where(i => i.Doctor_FK == reco.Doctor_id && i.Date == reco.d).ToList().Select(i => new RecordsViewModel(i)).ToList();
                     }
                 });
             }

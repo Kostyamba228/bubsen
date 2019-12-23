@@ -35,7 +35,7 @@ namespace Регистратура.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Login lg = new Login(rec.SelectedRecord.Record_ID);
+            Login lg = new Login(rec.SelectedRecord.Record_ID, rec);
             lg.ShowDialog();
             //frame.Content = Login(frame, rec.SelectedRecord);
         }

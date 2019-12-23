@@ -89,7 +89,7 @@ VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button  Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Height="70"  VerticalAlignment="Bottom" Width="190" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="471,0,139,0">
+            <Button  Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Height="70"  VerticalAlignment="Bottom" Width="190" Click="Button_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="250,0,0,0">
                 <Border Padding="20,0,0,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="#FF479C00">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="168">
                         <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>
@@ -97,7 +97,7 @@ VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </StackPanel>
                 </Border>
             </Button>
-            <Button  Style="{StaticResource ButtonStyle}" HorizontalAlignment="Left" Height="70"  VerticalAlignment="Bottom" Width="190" Click="Button1_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="166,0,0,0">
+            <Button  Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center" Height="70"  VerticalAlignment="Bottom" Width="190" Click="Button1_Click" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,250,0">
                 <Border Padding="20,0,0,0" CornerRadius="10" BorderThickness="2" BorderBrush="#FF479C00" Width="167">
                     <StackPanel Orientation="Horizontal">
                         <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>

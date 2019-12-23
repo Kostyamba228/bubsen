@@ -11,7 +11,8 @@ namespace Регистратура.Model
     {
         public string sp { get; set; }
         public string doctor { get; set; }
-        public DateTime date { get; set; }
+        private DateTime Date;
+        public DateTime date { get {return Date.Date; } set {Date = value;} }
         public TimeSpan time { get; set; }
         public int kabinet { get; set; }
     }

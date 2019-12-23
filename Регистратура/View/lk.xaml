@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Регистратура.View"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="lk">
+      Title="Личный кабинет">
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="63"/>
@@ -38,20 +38,20 @@
                 <StackPanel Grid.Column="0">
                     <TextBlock Text="Информация" HorizontalAlignment="Center" FontWeight="Bold"/>
                     <WrapPanel Orientation="Horizontal">
-                        <TextBlock Text="ФИО:"/>
-                        <TextBlock Text="{Binding Path=Fio}"/>
+                        <TextBlock Margin="10,10,0,0" FontSize="14" Text="ФИО: "/>
+                        <TextBlock Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Text="{Binding Path=Fio}"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal">
-                        <TextBlock Text="Адрес:"/>
-                        <TextBlock Text="{Binding Path=Adr}"/>
+                        <TextBlock Margin="10,10,0,0" FontSize="14" Text="Адрес: "/>
+                        <TextBlock Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Text="{Binding Path=Adr}"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal">
-                        <TextBlock Text="Страховой полис:"/>
-                        <TextBlock Text="{Binding Path=Polis}"/>
+                        <TextBlock Margin="10,10,0,0" FontSize="14" Text="Страховой полис: "/>
+                        <TextBlock Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Text="{Binding Path=Polis}"/>
                     </WrapPanel>
                     <WrapPanel Orientation="Horizontal">
-                        <TextBlock Text="Дата ождения:"/>
-                        <TextBlock Text="{Binding Path=Date}"/>
+                        <TextBlock Margin="10,10,0,0" FontSize="14" Text="Дата ождения: "/>
+                        <TextBlock Margin="0,10,0,0" FontSize="14" FontWeight="Bold" Text="{Binding Path=Date}"/>
                     </WrapPanel>
                     <StackPanel Orientation="Horizontal">
 
@@ -59,41 +59,37 @@
                 </StackPanel>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="7*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="44*"/>
+                        <RowDefinition Height="29*"/>
+                        <RowDefinition Height="206*"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="3*"/>
                             <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
-                        <DatePicker SelectedDate="{Binding Path=date1, Mode=TwoWay}" Grid.Column="1" />
-                        <DatePicker Grid.Column="2" SelectedDate="{Binding Path=date2, Mode=TwoWay}" />
+                        <DatePicker SelectedDate="{Binding Path=date1, Mode=TwoWay}" Margin="0,0,20,20" Grid.Column="1" />
+                        <DatePicker Grid.Column="2" SelectedDate="{Binding Path=date2, Mode=TwoWay}" Margin="20,0,0,20"/>
                     </Grid>
-                    <TextBlock Grid.Row="0" Text="Отчет" HorizontalAlignment="Center" FontSize="20"/>
-                    <Button Grid.Row="2" Command="{Binding Path=otch}" Content="Найти"/>
-                    <DataGrid x:Name="datagrid" Grid.Column="1" Grid.Row="3" ItemsSource="{Binding Path=OOO}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" CanUserReorderColumns="False" IsReadOnly="True">
+                    <TextBlock Grid.Row="0" Text="Отчет" HorizontalAlignment="Center" FontSize="20" Margin="250,0" Width="54"/>
+                    <Button Grid.Row="2" Command="{Binding Path=otch}" Content="Найти" Background="#FFB7FF82"/>
+                    <DataGrid x:Name="datagrid" Grid.Row="3" ItemsSource="{Binding Path=OOO}" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged" CanUserReorderColumns="False" IsReadOnly="True" Margin="0,0,0,30">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Специальность" Binding="{Binding Path=sp}"/>
                             <DataGridTextColumn Header="ФИО врача" Binding="{Binding Path=doctor}"/>
-                            <DataGridTextColumn Header="Дата" Binding="{Binding Path=date}"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Path=date}" Width="70"/>
                             <DataGridTextColumn Header="Время" Binding="{Binding Path=time}"/>
                             <DataGridTextColumn Header="Кабинет" Binding="{Binding Path=kabinet}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
-
-
-
-
             </Grid>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="82,198,0,0" VerticalAlignment="Top" Width="75" Click="Print"/>
+
 
         </Grid>
-
+        <Button Content="Печать" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Click="Print" Height="30" Grid.Column="" Grid.Row="2"/>
     </Grid>
 </Window>

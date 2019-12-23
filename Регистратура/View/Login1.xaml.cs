@@ -23,15 +23,15 @@ namespace Регистратура.View
         Frame frame;
         int record;
         Logins log;
-
+        ViewModel.Records rec;
 
         public Login1(Frame frame )
         {
             InitializeComponent();
-
+            rec = null;
             this.frame = frame;
             //DataContext = new Doctors(sp_ID);
-            log = new Logins( record);
+            log = new Logins( record, rec);
             
             DataContext = log;
         }

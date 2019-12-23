@@ -6,30 +6,37 @@
         xmlns:local="clr-namespace:Регистратура.View"
         mc:Ignorable="d"
         
-        Title="Запись" Height="300" Width="500" WindowStartupLocation="CenterScreen">
+        Title="Запись" Height="320" Width="500" WindowStartupLocation="CenterScreen">
 
-    <Grid Opacity="0.8">
+    <Grid Opacity="1">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="White" Offset="0"/>
-                <GradientStop Color="#FF2EFF00" Offset="1"/>
+                <GradientStop Color="#FFA5E675" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="85*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
-            <TextBlock  Text="Введите логин" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
+            <TextBlock  Text="Введите логин" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="8px" FontSize="16"/>
             <TextBox   HorizontalAlignment="Center" Height="30" Width="250" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Loginss, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Bottom" Margin="18,0"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <TextBlock  Text="Введите пароль" HorizontalAlignment="Center"  VerticalAlignment="Top"  FontSize="16"    />
+            <TextBlock  Text="Введите пароль" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="8px" FontSize="16"/>
             <TextBox  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30" Height="30" Width="250" TextWrapping="Wrap" Text="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"    />
         </StackPanel>
-        <Button Command="{Binding Path=SelectCommand}"  Content="Button" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Click="Button_Click" />
+        <Button Command="{Binding Path=SelectCommand}"   HorizontalAlignment="Center" Margin="0,0,0,10"  Grid.Row="3" VerticalAlignment="Bottom" Click="Button_Click" Background="{x:Null}" Height="56" Width="182" BorderBrush="{x:Null}" >
+            <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>
+                    <TextBlock Text="Next" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontStyle="Italic" FontSize="21" FontFamily="Ink Free"  />
+                </StackPanel>
+            </Border>
+        </Button>
 
 
 

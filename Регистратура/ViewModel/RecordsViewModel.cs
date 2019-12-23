@@ -7,7 +7,7 @@ using Регистратура.Model;
 
 namespace Регистратура.ViewModel
 {
-    class RecordsViewModel:Base
+    public class RecordsViewModel:Base
     {
         Record record;
 

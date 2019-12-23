@@ -5,30 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Регистратура.View"
         mc:Ignorable="d"
-        Title="Вход" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Вход"  Height="320" Width="500" WindowStartupLocation="CenterScreen">
+    <Grid Opacity="1">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="White" Offset="0"/>
-                <GradientStop Color="#FF2EFF00" Offset="1"/>
+                <GradientStop Color="#FFA5E675" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="85*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
-            <TextBlock x:Name="label" Text="Введите логин" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
-            <TextBox x:Name="textBox"  HorizontalAlignment="Center" Height="17"  Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Loginss, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
+            <TextBlock x:Name="label" Text="Введите логин" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="8px" FontSize="16" />
+            <TextBox x:Name="textBox" HorizontalAlignment="Center" Height="30" Width="250" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Loginss, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Bottom" Margin="18,0"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <TextBlock  Text="Введите пароль" HorizontalAlignment="Center"  VerticalAlignment="Top" Height="13" Grid.Row="1" FontSize="9" />
-            <TextBox x:Name="textBox_Copy"  HorizontalAlignment="Center" Height="17" TextWrapping="Wrap" Text="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom" Width="86" Margin="18,0"/>
+            <TextBlock  Text="Введите пароль" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="8px" FontSize="16"/>
+            <TextBox x:Name="textBox_Copy"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="30" Width="250" TextWrapping="Wrap" Text="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="18,0"/>
         </StackPanel>
-        <Button Command="{Binding Path=Login}"  Content="Button" HorizontalAlignment="Center"  Grid.Row="3" VerticalAlignment="Center" Click="Button_Click" />
-
+        
+       <Button Command="{Binding Path=Login}"  HorizontalAlignment="Center" Margin="0,0,0,10"  Grid.Row="3" VerticalAlignment="Bottom" Click="Button_Click" Background="{x:Null}" Height="56" Width="182" BorderBrush="{x:Null}" >
+            <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="Black">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>
+                    <TextBlock Text="Next" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontStyle="Italic" FontSize="21" FontFamily="Ink Free"  />
+                </StackPanel>
+            </Border>
+        </Button>
 
 
 

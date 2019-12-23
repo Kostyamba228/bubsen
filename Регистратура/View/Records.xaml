@@ -95,7 +95,7 @@ VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </StackPanel>
 
             </Grid>
-                <ListView Grid.Column="1" ItemsSource="{Binding Path=Allrecord}" SelectedItem="{Binding Path=SelectedRecord, Mode=TwoWay}" Margin="20,20,20,70" Background="{x:Null}" VerticalAlignment="Center"  HorizontalAlignment="Center" BorderBrush="{x:Null}">
+                <ListView Grid.Column="1" ItemsSource="{Binding Path=Allrecord, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=SelectedRecord, Mode=TwoWay}" Margin="20,20,20,70" Background="{x:Null}" VerticalAlignment="Center"  HorizontalAlignment="Center" BorderBrush="{x:Null}">
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <UniformGrid Columns="3"/>

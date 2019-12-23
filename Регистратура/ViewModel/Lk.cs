@@ -13,12 +13,13 @@ namespace Регистратура.ViewModel
     {
         ClinContext db;
         Report report;
+       
 
         private List<Otchet> otchet;
         public List<Otchet> OOO
         {
             get { return otchet; }
-            set { otchet = value; OnPropertyChanged("Otchet"); }
+            set { otchet = report.Find(date1.Date, date2.Date, id).ToList(); ; OnPropertyChanged("OOO"); }
         }
         public DateTime date1 { get; set; } = DateTime.Now.Date;
         public DateTime date2 { get; set; } = DateTime.Now.AddMonths(1);
@@ -31,7 +32,7 @@ namespace Регистратура.ViewModel
             db = new ClinContext();
             report = new Report();
             pat = db.Patient.Where(i => i.Patient_ID == id).FirstOrDefault();
-            OOO = report.Find(date1.Date, date2.Date, id).ToList();
+          //  OOO = report.Find(date1.Date, date2.Date, id).ToList();
         }
 
         public string Fio
