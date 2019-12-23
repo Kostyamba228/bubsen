@@ -90,6 +90,6 @@
 
 
         </Grid>
-        <Button Content="Печать" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Click="Print" Height="30" Grid.Column="" Grid.Row="2"/>
+        <Button Content="Печать" HorizontalAlignment="Right"  VerticalAlignment="Bottom" Click="Print" Height="30" Grid.Row="2" Background="#FFB7FF82" Width="552"/>
     </Grid>
 </Window>

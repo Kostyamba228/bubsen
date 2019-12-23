@@ -49,36 +49,24 @@
                         <ImageBrush Stretch="UniformToFill" ImageSource="/Регистратура;component/picture/right.png"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="ButtonOpenMenu" VerticalAlignment="Top" HorizontalAlignment="Right" Width="44" Height="42" Click="ButtonOpenMenu_Click" Margin="0,6,8,0">
+                <Button x:Name="ButtonOpenMenu" VerticalAlignment="Top" HorizontalAlignment="Right" Width="44" Height="42" Click="ButtonOpenMenu_Click" Margin="0,6,8,0" BorderBrush="{x:Null}">
                     <Button.Background>
                         <ImageBrush  Stretch="None" ImageSource="/Регистратура;component/picture/right.png"/>
                     </Button.Background>
                 </Button>
             </Grid>
             <ListView Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,263" Background="{x:Null}">
-                <ListViewItem Height="60">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48" Source="/Регистратура;component/picture/Hospital.png"/>
-                        <TextBlock Text="Главная страница" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell" FontSize="16"/>
-                    </StackPanel>
-
-                </ListViewItem>
+                
                 <ListViewItem Height="60" Background="{x:Null}" Selected="ListViewItem_Selected">
                     <StackPanel Orientation="Horizontal">
-                        <Button Background="{x:Null}" Click="ButtonClick">
+                        <Button Background="{x:Null}" Click="ButtonClick" BorderBrush="{x:Null}">
                             <StackPanel Orientation="Horizontal">
                                 <Image Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48" Source="/Регистратура;component/picture/reference.png"/>
-                                <TextBlock Text="Справка" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell" FontSize="16"/>
+                                <TextBlock Text="Личный кабинет" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell" FontSize="16"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="60" Background="{x:Null}">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Stretch="Uniform" RenderTransformOrigin="0.5,0.5" OpacityMask="White" Width="48" Source="/Регистратура;component/picture/Date.png"/>
-                        <TextBlock Text="Контактная информация" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"  FontFamily="Rockwell"/>
-                    </StackPanel>
-                </ListViewItem>
+                </ListViewItem>          
             </ListView>
         </Grid>
     </Grid>
