@@ -115,7 +115,7 @@ VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                 <Border Padding="40,0,40,0" CornerRadius="10" Margin="5" BorderThickness="2" BorderBrush="{Binding Path=Color, UpdateSourceTrigger=PropertyChanged}">
                     <StackPanel Orientation="Horizontal">
                         <Image Width="40" Height="40" Source="/Регистратура;component/picture/Doctor.png"/>
-                        <TextBlock Text="Next" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontStyle="Italic" FontSize="21" FontFamily="Ink Free"  />
+                        <TextBlock Text="Далее" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontStyle="Italic" FontSize="21" FontFamily="Ink Free"  />
                     </StackPanel>
                 </Border>
             </Button>
